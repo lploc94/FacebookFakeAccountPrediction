@@ -1,0 +1,13 @@
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\bin\Debug\GetIdFB.exe.config
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\bin\Debug\GetIdFB.exe
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\bin\Debug\GetIdFB.pdb
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\bin\Debug\RestSharp.dll
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\bin\Debug\System.ValueTuple.dll
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\bin\Debug\System.ValueTuple.xml
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.csprojResolveAssemblyReference.cache
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.Form1.resources
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.Properties.Resources.resources
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.csproj.GenerateResource.Cache
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.csproj.CoreCompileInputs.cache
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.exe
+C:\Users\thorn\Documents\Visual Studio 2017\Projects\FakeAccountPrediction\GetIdFB\obj\Debug\GetIdFB.pdb
