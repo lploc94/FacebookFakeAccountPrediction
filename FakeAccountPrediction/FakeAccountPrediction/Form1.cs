@@ -38,7 +38,7 @@ namespace FakeAccountPrediction
                 service.HideCommandPromptWindow = true;
                 var options = new ChromeOptions();
                 options.AddArgument("--disable-notifications");
-                //options.AddArgument("--headless");
+                options.AddArgument("--headless");
                 //options.AddArgument("--window-position=-32000,-32000");
                 driver = new ChromeDriver(service, options);
 
@@ -67,6 +67,10 @@ namespace FakeAccountPrediction
                 }
 
                 double[] result = getVector(AccountPredictionTB.Text);
+                string s = result[0].ToString() + "," + result[1].ToString() + ","
+                        + result[2].ToString() + "," + result[3].ToString() + "," + result[4].ToString() + "," + result[5].ToString() + "," + result[6].ToString() + ","
+                        + result[7].ToString() + "," + result[8].ToString() + "," + result[9].ToString() + "," + result[10].ToString() + "," + result[11].ToString();
+                log("vector input: "+s);
                 if (prediction.test(result).Equals("0"))
                 {
                     log(AccountPredictionTB.Text + " là Facebook giả");
@@ -122,9 +126,9 @@ namespace FakeAccountPrediction
 
 
             #region photo by
-            log("Lấy photo by");
             try
             {
+                log("lấy photo by...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/photos-by");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -157,6 +161,7 @@ namespace FakeAccountPrediction
                     }
 
                 }
+                log(NumberOfPictures + " tấm");
             }
             catch (Exception e)
             {
@@ -165,9 +170,9 @@ namespace FakeAccountPrediction
 
             #endregion
             #region photo of
-            log("Lấy photo of");
             try
             {
+                log("lấy photo of...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/photos-of");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -200,6 +205,7 @@ namespace FakeAccountPrediction
                     }
 
                 }
+                log(NumberOfPicturesOf + " tấm");
             }
             catch (Exception e)
             {
@@ -208,9 +214,9 @@ namespace FakeAccountPrediction
 
             #endregion
             #region video by
-            log("Lấy video by");
             try
             {
+                log("lấy video by...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/videos-by");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -219,6 +225,7 @@ namespace FakeAccountPrediction
                 }
                 elements = driver.FindElements(By.XPath(@".//div[@class='_401d']"));
                 NumberOfVideosBy = elements.Count;
+                log(NumberOfVideosBy + " video");
             }
             catch (Exception e)
             {
@@ -227,9 +234,9 @@ namespace FakeAccountPrediction
             #endregion
 
             #region video tagged
-            log("Lấy video tagged");
             try
             {
+                log("lấy video được tag...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/videos-of/intersect");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -238,6 +245,7 @@ namespace FakeAccountPrediction
                 }
                 elements = driver.FindElements(By.XPath(@".//div[@class='_401d']"));
                 NumberOfVideosTagged = elements.Count;
+                log(NumberOfVideosTagged + " video");
             }
             catch (Exception e)
             {
@@ -246,17 +254,19 @@ namespace FakeAccountPrediction
             #endregion
 
             #region post by
-            log("Lấy post by");
             try
             {
+                log("lấy thông tin post...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/stories-by");
                 for (int i = 0; i < _maxsleep; i++)
                 {
                     ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0,200)");
                     Thread.Sleep(1000);
                 }
+                Thread.Sleep(1000);
                 elements = driver.FindElements(By.XPath(@".//div[@class='_401d']"));
                 NumberOfPosts = elements.Count;
+                log(NumberOfPosts.ToString());
             }
             catch (Exception e)
             {
@@ -265,17 +275,19 @@ namespace FakeAccountPrediction
             #endregion
 
             #region post tag
-            log("Lấy post tagged");
             try
             {
+                log("lấy thông tin post được tag...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/stories-tagged/intersect");
                 for (int i = 0; i < _maxsleep; i++)
                 {
                     ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0,200)");
                     Thread.Sleep(1000);
                 }
+                Thread.Sleep(1000);
                 elements = driver.FindElements(By.XPath(@".//div[@class='_401d']"));
                 NumberOfPostsTagged = elements.Count;
+                log(NumberOfPostsTagged.ToString());
             }
             catch (Exception e)
             {
@@ -284,9 +296,9 @@ namespace FakeAccountPrediction
             #endregion
 
             #region places visited
-            log("Lấy place visited");
             try
             {
+                log("lấy số địa điểm đã check-in...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/places-visited");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -295,6 +307,7 @@ namespace FakeAccountPrediction
                 }
                 elements = driver.FindElements(By.XPath(@".//li[@id and @data-bt]"));
                 NumberOfPlaces = elements.Count;
+                log(NumberOfPlaces + " nơi");
             }
             catch (Exception e)
             {
@@ -302,9 +315,9 @@ namespace FakeAccountPrediction
             }
             #endregion
             #region places liked
-            log("Lấy places like");
             try
             {
+                log("lấy những nơi đã like...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/places-liked");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -313,6 +326,7 @@ namespace FakeAccountPrediction
                 }
                 elements = driver.FindElements(By.XPath(@".//li[@id and @data-bt]"));
                 NumberOfPlacesLiked = elements.Count;
+                log(NumberOfPlacesLiked + " nơi");
             }
             catch (Exception e)
             {
@@ -320,9 +334,9 @@ namespace FakeAccountPrediction
             }
             #endregion
             #region friends
-            log("Lấy số friends");
             try
             {
+                log("Lấy số bạn bè...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/" + id);
                 string xpath = @"//a[contains(@href,'" + driver.Url + "') and contains(@href,'friends') and text()]";
                 for (int i = 0; i < _maxsleep; i++)
@@ -333,6 +347,7 @@ namespace FakeAccountPrediction
                 elements = driver.FindElementsByXPath(xpath);
                 string text = elements.Last().Text.Replace(".", "");
                 NumberOfFriends = Convert.ToInt16(text);
+                log(NumberOfFriends + " bạn");
 
             }
             catch (Exception e)
@@ -341,9 +356,9 @@ namespace FakeAccountPrediction
             }
             #endregion
             #region groups
-            log("Lấy số groups");
             try
             {
+                log("lấy số groups...");
                 driver.Navigate().GoToUrl("https://www.facebook.com/search/" + id + @"/groups");
                 for (int i = 0; i < _maxsleep; i++)
                 {
@@ -352,6 +367,7 @@ namespace FakeAccountPrediction
                 }
                 elements = driver.FindElements(By.XPath(@".//div[@class='_401d']"));
                 NumberOfGroup = elements.Count;
+                log(NumberOfGroup + " group");
             }
             catch (Exception e)
             {
@@ -381,10 +397,12 @@ namespace FakeAccountPrediction
         {
             if(LoginCB.Checked==true)
             {
+                this.Size = new Size(527, 508);
                 FBLoginGB.Show();
             }
             else
             {
+                this.Size = new Size(527, 315);
                 FBLoginGB.Hide();
             }
         }

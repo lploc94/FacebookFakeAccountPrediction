@@ -33,6 +33,7 @@
             this.ProcessLB = new System.Windows.Forms.Label();
             this.StopBTN = new System.Windows.Forms.Button();
             this.InputRTB = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MaxThreadNUD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,18 +91,28 @@
             this.InputRTB.TabIndex = 5;
             this.InputRTB.Text = "";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(216, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Dán link tới profile tại đây, Mỗi profile 1 dòng";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 250);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.InputRTB);
             this.Controls.Add(this.StopBTN);
             this.Controls.Add(this.ProcessLB);
             this.Controls.Add(this.MaxThreadNUD);
             this.Controls.Add(this.GetIDBTN);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tìm ID";
             ((System.ComponentModel.ISupportInitialize)(this.MaxThreadNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,6 +126,7 @@
         private System.Windows.Forms.Label ProcessLB;
         private System.Windows.Forms.Button StopBTN;
         private System.Windows.Forms.RichTextBox InputRTB;
+        private System.Windows.Forms.Label label1;
     }
 }
 

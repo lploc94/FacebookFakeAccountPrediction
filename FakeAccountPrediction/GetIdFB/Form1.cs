@@ -52,12 +52,7 @@ namespace GetIdFB
                 TaskInfo t = new TaskInfo(url);
                 ThreadPool.SetMaxThreads((int)MaxThreadNUD.Value, (int)MaxThreadNUD.Value);
                 ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadProc), t);
-                //Thread x = new Thread(() => 
-                //{
-                //    LibOfThorn.Seo.Crawler.Crawl(url, Xpaths, @"result\" + url.Replace(".", "-").Replace(@"https://","").Replace(@"http://", "").Replace("/", "-") + ".txt");
-                //    log(url+" => OK");
-                //});
-                //x.Start();
+                
             }
         }
         delegate void SetTextCallback(string text);

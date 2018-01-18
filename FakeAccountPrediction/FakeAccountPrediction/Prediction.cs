@@ -1,15 +1,7 @@
 ﻿using System;
-using Encog.Neural.Networks;
-using Encog.Neural.Networks.Layers;
-using Encog.Engine.Network.Activation;
 using Encog.ML.Data;
-using Encog.Neural.Networks.Training.Propagation.Resilient;
-using Encog.ML.Train;
 using Encog.ML.Data.Basic;
 using Encog;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using Encog.Persist;
 using Encog.ML.Data.Versatile.Sources;
 using Encog.Util.CSV;
@@ -18,7 +10,6 @@ using Encog.ML.Data.Versatile.Columns;
 using Encog.ML.Model;
 using Encog.ML.Factory;
 using Encog.ML;
-using System.Text;
 using System.IO;
 
 namespace FakeAccountPrediction
@@ -142,9 +133,6 @@ namespace FakeAccountPrediction
         }
         public Prediction()
         {
-            
-
-
 
         }
         public string test(double[] testInput)
@@ -173,9 +161,6 @@ namespace FakeAccountPrediction
             helper.NormalizeInputVector(line, ((BasicMLData)input).Data, false);
             IMLData output = bestMethod.Compute(input);
             return helper.DenormalizeOutputVectorToString(output)[0];
-
-
-            
 
             
         }

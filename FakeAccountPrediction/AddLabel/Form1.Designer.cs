@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FBLoginGB = new System.Windows.Forms.GroupBox();
             this.LoginXpathTB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,35 +46,33 @@
             this.StartBTN = new System.Windows.Forms.Button();
             this.RealBTN = new System.Windows.Forms.Button();
             this.FakeBTN = new System.Windows.Forms.Button();
-            this.UnknowBTN = new System.Windows.Forms.Button();
             this.StopBTN = new System.Windows.Forms.Button();
             this.ProcessLB = new System.Windows.Forms.TextBox();
             this.SleepingNUD = new System.Windows.Forms.NumericUpDown();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupBox2.SuspendLayout();
+            this.FBLoginGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SleepingNUD)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // FBLoginGB
             // 
-            this.groupBox2.Controls.Add(this.LoginXpathTB);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.XPassTB);
-            this.groupBox2.Controls.Add(this.XIDTB);
-            this.groupBox2.Controls.Add(this.PassTB);
-            this.groupBox2.Controls.Add(this.IDTB);
-            this.groupBox2.Controls.Add(this.LoginURLTB);
-            this.groupBox2.Controls.Add(this.LoginCB);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(486, 155);
-            this.groupBox2.TabIndex = 48;
-            this.groupBox2.TabStop = false;
+            this.FBLoginGB.Controls.Add(this.LoginXpathTB);
+            this.FBLoginGB.Controls.Add(this.label7);
+            this.FBLoginGB.Controls.Add(this.label5);
+            this.FBLoginGB.Controls.Add(this.label4);
+            this.FBLoginGB.Controls.Add(this.label3);
+            this.FBLoginGB.Controls.Add(this.label2);
+            this.FBLoginGB.Controls.Add(this.label1);
+            this.FBLoginGB.Controls.Add(this.XPassTB);
+            this.FBLoginGB.Controls.Add(this.XIDTB);
+            this.FBLoginGB.Controls.Add(this.PassTB);
+            this.FBLoginGB.Controls.Add(this.IDTB);
+            this.FBLoginGB.Controls.Add(this.LoginURLTB);
+            this.FBLoginGB.Location = new System.Drawing.Point(15, 262);
+            this.FBLoginGB.Name = "FBLoginGB";
+            this.FBLoginGB.Size = new System.Drawing.Size(486, 155);
+            this.FBLoginGB.TabIndex = 48;
+            this.FBLoginGB.TabStop = false;
             // 
             // LoginXpathTB
             // 
@@ -180,16 +178,17 @@
             // LoginCB
             // 
             this.LoginCB.AutoSize = true;
-            this.LoginCB.Location = new System.Drawing.Point(12, 0);
+            this.LoginCB.Location = new System.Drawing.Point(22, 223);
             this.LoginCB.Name = "LoginCB";
             this.LoginCB.Size = new System.Drawing.Size(103, 17);
             this.LoginCB.TabIndex = 18;
             this.LoginCB.Text = "Facebook Login";
             this.LoginCB.UseVisualStyleBackColor = true;
+            this.LoginCB.CheckStateChanged += new System.EventHandler(this.LoginCB_CheckStateChanged);
             // 
             // StartBTN
             // 
-            this.StartBTN.Location = new System.Drawing.Point(12, 173);
+            this.StartBTN.Location = new System.Drawing.Point(22, 12);
             this.StartBTN.Name = "StartBTN";
             this.StartBTN.Size = new System.Drawing.Size(99, 30);
             this.StartBTN.TabIndex = 50;
@@ -199,7 +198,7 @@
             // 
             // RealBTN
             // 
-            this.RealBTN.Location = new System.Drawing.Point(12, 389);
+            this.RealBTN.Location = new System.Drawing.Point(22, 179);
             this.RealBTN.Name = "RealBTN";
             this.RealBTN.Size = new System.Drawing.Size(94, 28);
             this.RealBTN.TabIndex = 51;
@@ -209,7 +208,7 @@
             // 
             // FakeBTN
             // 
-            this.FakeBTN.Location = new System.Drawing.Point(112, 389);
+            this.FakeBTN.Location = new System.Drawing.Point(122, 179);
             this.FakeBTN.Name = "FakeBTN";
             this.FakeBTN.Size = new System.Drawing.Size(89, 29);
             this.FakeBTN.TabIndex = 52;
@@ -217,19 +216,9 @@
             this.FakeBTN.UseVisualStyleBackColor = true;
             this.FakeBTN.Click += new System.EventHandler(this.FakeBTN_Click);
             // 
-            // UnknowBTN
-            // 
-            this.UnknowBTN.Location = new System.Drawing.Point(207, 389);
-            this.UnknowBTN.Name = "UnknowBTN";
-            this.UnknowBTN.Size = new System.Drawing.Size(93, 28);
-            this.UnknowBTN.TabIndex = 53;
-            this.UnknowBTN.Text = "Unknow";
-            this.UnknowBTN.UseVisualStyleBackColor = true;
-            this.UnknowBTN.Click += new System.EventHandler(this.UnknowBTN_Click);
-            // 
             // StopBTN
             // 
-            this.StopBTN.Location = new System.Drawing.Point(138, 173);
+            this.StopBTN.Location = new System.Drawing.Point(148, 12);
             this.StopBTN.Name = "StopBTN";
             this.StopBTN.Size = new System.Drawing.Size(99, 30);
             this.StopBTN.TabIndex = 54;
@@ -239,7 +228,7 @@
             // 
             // ProcessLB
             // 
-            this.ProcessLB.Location = new System.Drawing.Point(12, 236);
+            this.ProcessLB.Location = new System.Drawing.Point(24, 48);
             this.ProcessLB.Multiline = true;
             this.ProcessLB.Name = "ProcessLB";
             this.ProcessLB.Size = new System.Drawing.Size(469, 114);
@@ -247,7 +236,7 @@
             // 
             // SleepingNUD
             // 
-            this.SleepingNUD.Location = new System.Drawing.Point(361, 180);
+            this.SleepingNUD.Location = new System.Drawing.Point(373, 423);
             this.SleepingNUD.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -271,19 +260,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 438);
+            this.ClientSize = new System.Drawing.Size(513, 256);
             this.Controls.Add(this.SleepingNUD);
             this.Controls.Add(this.ProcessLB);
             this.Controls.Add(this.StopBTN);
-            this.Controls.Add(this.UnknowBTN);
             this.Controls.Add(this.FakeBTN);
             this.Controls.Add(this.RealBTN);
             this.Controls.Add(this.StartBTN);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.FBLoginGB);
+            this.Controls.Add(this.LoginCB);
             this.Name = "Form1";
             this.Text = "Gán Nhãn";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.FBLoginGB.ResumeLayout(false);
+            this.FBLoginGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SleepingNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,7 +281,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox FBLoginGB;
         private System.Windows.Forms.TextBox LoginXpathTB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -309,7 +298,6 @@
         private System.Windows.Forms.Button StartBTN;
         private System.Windows.Forms.Button RealBTN;
         private System.Windows.Forms.Button FakeBTN;
-        private System.Windows.Forms.Button UnknowBTN;
         private System.Windows.Forms.Button StopBTN;
         private System.Windows.Forms.TextBox ProcessLB;
         private System.Windows.Forms.NumericUpDown SleepingNUD;
